@@ -81,6 +81,18 @@
 					</execution>
 				</executions>
 			</plugin>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-javadoc-plugin</artifactId>
+			<version>2.10.1</version>
+			<configuration>
+				<aggregate>true</aggregate>
+				<links>
+					<link>https://hub.spigotmc.org/javadocs/spigot/</link>
+					<link>http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/index.html</link>
+				</links>
+			</configuration>
+		</plugin>
         </plugins>
     </build>
     
