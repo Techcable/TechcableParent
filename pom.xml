@@ -2,16 +2,16 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>net.techcable</groupId>
     <artifactId>parent</artifactId>
-    <version>1.0.6</version>
+    <version>1.0.7</version>
     <packaging>pom</packaging>
     <properties>
         <java.version>1.8</java.version>
         <mainClass></mainClass>
         <!-- Licensing -->
-        <license.name></license.name>
+        <license.name>${license.id}</license.name>
         <license.year>2015</license.year>
         <license.owner>Techcable</license.owner>
-        <license.url>com/mycila/maven/plugin/license/templates/${license.name}.txt</license.url>
+        <license.url></license.url>
     </properties>
     
     <repositories>
@@ -20,7 +20,21 @@
             <url>http://repo.techcable.net/content/groups/public/</url>
         </repository>
     </repositories>
-    
+
+    <profiles>
+        <profile>
+            <id>license-activated</id>
+            <activation>
+                <property>
+                    <name>license.id</name>
+                </property>
+            </activation>
+            <properties>
+                <license.id>com/mycila/maven/plugin/license/templates/${license.id}.txt</license.id>
+            </properties>
+        </profile>
+    </profiles>
+
     <dependencies>
         <dependency>
             <groupId>org.projectlombok</groupId>
