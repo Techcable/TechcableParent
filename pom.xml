@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>net.techcable</groupId>
     <artifactId>parent</artifactId>
-    <version>1.0.7</version>
+    <version>1.0.8</version>
     <packaging>pom</packaging>
     <properties>
         <java.version>1.8</java.version>
@@ -30,7 +30,7 @@
                 </property>
             </activation>
             <properties>
-                <license.id>com/mycila/maven/plugin/license/templates/${license.id}.txt</license.id>
+                <license.url>com/mycila/maven/plugin/license/templates/${license.id}.txt</license.url>
             </properties>
         </profile>
     </profiles>
@@ -52,7 +52,6 @@
                 <configuration>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
-                    <debug>true</debug>
                 </configuration>
             </plugin>
             <plugin>
@@ -104,6 +103,7 @@
                     </execution>
                 </executions>
                 <configuration>
+                    <minimizeJar>true</minimizeJar>
                     <filters>
                         <filter>
                             <artifact>*:*</artifact>
